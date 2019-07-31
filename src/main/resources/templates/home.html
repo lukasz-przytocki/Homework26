@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie list</title>
+</head>
+<body>
+
+<ul>
+    <li th:each="task:${tasks}">
+        <a th:href="|/task?id=${task.id}|" th:text="|${task.task - ${task.category}}|"></a>
+
+    </li>
+
+
+</ul>
+
+</body>
+</html>
