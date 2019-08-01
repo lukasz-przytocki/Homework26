@@ -51,20 +51,7 @@ public class TaskController {
         entityManager.getTransaction().begin();
         entityManager.persist(task1);
         entityManager.getTransaction().commit();
-       // return "dodano!";
-//        TypedQuery<Task> query= entityManager.createQuery("insert into Task (category,is_done, task, to_date) VALUES (:category,:isDone,:task,:toDate)", Task.class);
-//        query.setParameter("category", category);
-//        query.setParameter("isDone", "no");
-//        query.setParameter("task", task);
-//        query.setParameter("toDate", toDate);
-
-
-//        List<Task> tasksList = query.getResultList();
-//        model.addAttribute("tasks",tasksList);
         return "home";
     }
- //   INSERT iNTO task(category, is_done, task, to_date)
- //   values('HOUSE','no','Clean windows','2019-08-30'),
 
-//    "insert into Task (category,is_done, task, to_date) VALUES (:category,:isDone,:task,:toDate)", Task.class))
 }
