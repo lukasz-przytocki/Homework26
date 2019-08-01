@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Products table</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+
+</head>
+<body>
+<div style="margin: 70px">
+    <table class="table table-striped">
+        <thead class="thead-dark">
+        <h3> Zadania do zrobienia</h3><br/>
+
+        <tr>
+            <th scope="col">Zadanie</th>
+            <th scope="col">Kategoria</th>
+            <th scope="col">Termin</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="task:${tasks}">
+            <th th:text="${task.task}"></th>
+            <th th:text="${task.category}"></th>
+            <th th:text="${task.toDate}"></th>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

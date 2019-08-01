@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <head>
     <meta charset="UTF-8">
     <title>Movie list</title>
 </head>
 <body>
-
-<ul>
-    <li th:each="task:${tasks}">
-        <a th:href="|/task?id=${task.id}|" th:text="|${task.task - ${task.category}}|"></a>
-
-    </li>
-
-
-</ul>
-
+<div style="width: 90%; margin:30px">
+    <h3> Zarządzanie zadaniami</h3>
+    <ul>
+        <li><a href="/notDone" target="_blank">Zadania do zrobienia</a></li>
+        <li><a href="/archive" target="_blank">Archiwum zadań</a></li>
+    </ul>
+</div>
+<div style="margin: 1%">
+    <p>Dodaj nowe zadanie</p>
+    <form class=" form-inline " method="post" action="/add">
+        <div class="form-row">
+            <input type="text" placeholder="Zadanie" , name="task">
+            <input type="date" placeholder="Do kiedy" , name="toDdate">
+            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="productCategory">
+                <option selected disabled>Kategoria</option>
+                <option value="HOUSE">Domowe</option>
+                <option value="SHOPING">Zakupy</option>
+                <option value="BILLS">Rachunki</option>
+                <option value="EDUCATION">Nauka</option>
+                <option value="CAR">Samochód</option>
+                <option value="OTHER">Inne</option>
+            </select>
+            <input type="submit" name="Zapisz">
+        </div>
+    </form>
+</div>
 </body>
 </html>
