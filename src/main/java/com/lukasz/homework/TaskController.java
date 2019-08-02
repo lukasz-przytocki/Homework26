@@ -18,7 +18,6 @@ public class TaskController {
 
     @Autowired
     private EntityManagerFactory entityManagerFactory;
-;
 
     @GetMapping("/")
     public String home(){
